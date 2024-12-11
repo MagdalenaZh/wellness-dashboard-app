@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import MoodLineChart from "../components/MoodLineChart";
 import Sparklines from "../components/Sparklines";
 import MoodPieChart from "../components/MoodPieChart";
+import SleepAreaChart from "../components/SleepAreaChart";
 
 const MoodTrends = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -30,10 +31,9 @@ const MoodTrends = () => {
 
       <div className="flex flex-1">
         <Sidebar />
-
+      
         <main className="flex-1 p-6 bg-gray-50">
           <h1 className="text-3xl font-bold mb-6">Mood Trends</h1>
-
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <div className="bg-white p-4 shadow rounded-lg">
               <h2 className="text-lg font-semibold text-gray-800">
@@ -54,7 +54,7 @@ const MoodTrends = () => {
               <p className="text-2xl font-bold text-red-600">12/04/2023</p>
             </div>
           </div>
-
+          <SleepAreaChart/>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <MoodLineChart />
 

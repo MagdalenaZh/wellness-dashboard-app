@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import BarChart from "../components/BarChart";
 import DrilldownChart from "../components/DrilldownChart";
 import LineChart from "../components/LineChart";
-
+import LiveExerciseData from "../components/LiveExerciseData";
 const GymProgress = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [timeFrame, setTimeFrame] = useState("week");
@@ -27,7 +27,10 @@ const GymProgress = () => {
           <h1 className="text-3xl font-bold mb-6 text-gray-200">
             Gym Progress
           </h1>
-
+ {/* Live Data Component */}
+ <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <LiveExerciseData />
+          </div>
           {/* KPIs Section */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             <div className="bg-gray-800 p-3 shadow rounded-lg max-w-sm">
