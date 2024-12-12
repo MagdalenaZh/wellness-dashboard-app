@@ -19,7 +19,7 @@ ChartJS.register(
   Legend
 );
 
-const BarChart = () => {
+const GymBarChart = () => {
   const data = {
     labels: [
       "Monday",
@@ -56,4 +56,4 @@ const BarChart = () => {
   );
 };
 
-export default BarChart;
+export default GymBarChart;

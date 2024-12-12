@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import BarChart from "../components/BarChart";
-import DrilldownChart from "../components/DrilldownChart";
-import LineChart from "../components/LineChart";
+import GymBarChart from "../components/GymBarChart";
+import GymDrilldownChart from "../components/GymDrilldownChart";
+import DietLineChart from "../components/DietLineChart";
 import LiveExerciseData from "../components/LiveExerciseData";
 
 const GymProgress = () => {
@@ -90,17 +90,17 @@ const GymProgress = () => {
           <div className="flex flex-wrap gap-4">
             {/* Top Row: Bar Chart and Line Chart */}
             <div className="flex-1 basis-[45%] max-w-full bg-gray-800 p-4 shadow rounded-lg">
-              <BarChart />
+              <GymBarChart />
             </div>
             <div className="flex-1 basis-[45%] max-w-full bg-gray-800 p-4 shadow rounded-lg">
-              <LineChart includeBMI={true} />
+              <DietLineChart />
             </div>
           </div>
 
           {/* Bottom Row: Centered Drilldown Chart */}
           <div className="flex justify-center mt-6">
             <div className="w-full max-w-[600px] bg-gray-800 p-4 shadow rounded-lg">
-              <DrilldownChart timeFrame={timeFrame} />
+              <GymDrilldownChart timeFrame={timeFrame} />
             </div>
           </div>
         </main>

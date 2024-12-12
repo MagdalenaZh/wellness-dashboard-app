@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import BulletGraph from "../components/BulletGraph";
+import DietBulletGraph from "../components/DietBulletGraph";
 import DietBarChart from "../components/DietBarChart";
-import LineChart from "../components/LineChart";
-import Table from "../components/Table";
+import DietLineChart from "../components/DietLineChart";
+import DietTable from "../components/DietTable";
 
 const DietInsights = () => {
   return (
@@ -53,7 +53,7 @@ const DietInsights = () => {
           {/* Charts Section */}
           <div className="flex flex-wrap gap-4 mb-6">
             <div className="flex-1 min-w-[300px] bg-gray-800 p-4 shadow rounded-lg">
-              <BulletGraph />
+              <DietBulletGraph />
             </div>
             <div className="flex-1 min-w-[300px] bg-gray-800 p-4 shadow rounded-lg">
               <DietBarChart />
@@ -63,13 +63,13 @@ const DietInsights = () => {
           {/* Centered Line Chart Section */}
           <div className="flex justify-center mt-6">
             <div className="w-full max-w-[800px] bg-gray-800 p-4 shadow rounded-lg">
-              <LineChart />
+              <DietLineChart />
             </div>
           </div>
 
           {/* Table Section */}
           <div className="mt-6">
-            <Table />
+            <DietTable />
           </div>
         </main>
       </div>

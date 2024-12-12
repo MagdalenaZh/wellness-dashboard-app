@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import BarChart from "../components/BarChart";
-import LineChart from "../components/LineChart";
-import DrilldownChart from "../components/DrilldownChart";
+import GymBarChart from "../components/GymBarChart";
+import DietLineChart from "../components/DietLineChart";
+import GymDrilldownChart from "../components/GymDrilldownChart";
 
 const Dashboard = () => {
   //toggle sidebar visibility
@@ -78,8 +78,8 @@ const Dashboard = () => {
 
           {/* Charts */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {selectedCharts.barChart && <BarChart />}
-            {selectedCharts.lineChart && <LineChart />}
+            {selectedCharts.barChart && <GymBarChart />}
+            {selectedCharts.lineChart && <GymDietLineChart />}
             {selectedCharts.drilldownChart && <DrilldownChart />}
           </div>
         </main>

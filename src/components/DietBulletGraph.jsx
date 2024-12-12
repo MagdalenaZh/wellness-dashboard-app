@@ -19,7 +19,7 @@ ChartJS.register(
   Legend
 );
 
-const BulletGraph = () => {
+const DietBulletGraph = () => {
   const data = {
     labels: ["Calories"],
     datasets: [
@@ -79,4 +79,4 @@ const BulletGraph = () => {
   );
 };
 
-export default BulletGraph;
+export default DietBulletGraph;

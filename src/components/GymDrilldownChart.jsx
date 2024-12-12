@@ -4,7 +4,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DrilldownChart = ({ timeFrame }) => {
+const GymDrilldownChart = ({ timeFrame }) => {
   const data = {
     labels: ["Cardio", "Strength", "Yoga", "HIIT"],
     datasets: [
@@ -40,4 +40,4 @@ const DrilldownChart = ({ timeFrame }) => {
   );
 };
 
-export default DrilldownChart;
+export default GymDrilldownChart;

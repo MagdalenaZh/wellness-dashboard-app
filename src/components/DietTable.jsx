@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Table = () => {
+const DietTable = () => {
   const [selectedRow, setSelectedRow] = useState(null);
 
   const data = [
@@ -131,4 +131,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default DietTable;

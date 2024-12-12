@@ -21,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-const LineChart = ({ includeBMI = false }) => {
+const DietLineChart = ({ includeBMI = false }) => {
   const data = {
     labels: ["", "Breakfast", "Snack", "Lunch", "Snack", "Dinner"],
     datasets: [
@@ -74,4 +74,4 @@ const LineChart = ({ includeBMI = false }) => {
   );
 };
 
-export default LineChart;
+export default DietLineChart;
