@@ -6,6 +6,7 @@ import BarChart from "../components/BarChart";
 import DrilldownChart from "../components/DrilldownChart";
 import LineChart from "../components/LineChart";
 import LiveExerciseData from "../components/LiveExerciseData";
+
 const GymProgress = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [timeFrame, setTimeFrame] = useState("week");
@@ -27,15 +28,15 @@ const GymProgress = () => {
           <h1 className="text-3xl font-bold mb-6 text-gray-200">
             Gym Progress
           </h1>
+
           {/* Live Data Component */}
-          {/* Live Exercise Data Section */}
           <div className="flex flex-wrap justify-between gap-4 mb-6">
             <LiveExerciseData />
           </div>
 
           {/* KPIs Section */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            <div className="bg-gray-800 p-3 shadow rounded-lg max-w-sm">
+            <div className="bg-gray-800 p-3 shadow rounded-lg">
               <h2 className="text-md font-semibold">Total Workout Time</h2>
               <select
                 className="bg-gray-700 text-white mt-1 p-1 rounded w-full"
@@ -50,7 +51,7 @@ const GymProgress = () => {
               </p>
             </div>
 
-            <div className="bg-gray-800 p-3 shadow rounded-lg max-w-sm">
+            <div className="bg-gray-800 p-3 shadow rounded-lg">
               <h2 className="text-md font-semibold">Calories Burned</h2>
               <select
                 className="bg-gray-700 text-white mt-1 p-1 rounded w-full"
@@ -65,7 +66,7 @@ const GymProgress = () => {
               </p>
             </div>
 
-            <div className="bg-gray-800 p-3 shadow rounded-lg max-w-sm">
+            <div className="bg-gray-800 p-3 shadow rounded-lg">
               <h2 className="text-md font-semibold">Steps Taken</h2>
               <input
                 type="number"
@@ -76,7 +77,7 @@ const GymProgress = () => {
               <p className="text-sm text-gray-400">1 km = 1500 steps</p>
             </div>
 
-            <div className="bg-gray-800 p-3 shadow rounded-lg max-w-sm">
+            <div className="bg-gray-800 p-3 shadow rounded-lg">
               <h2 className="text-md font-semibold">Distance Covered</h2>
               <p className="text-lg font-bold text-green-400 mt-2">
                 {distance} km
@@ -85,18 +86,22 @@ const GymProgress = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="bg-gray-800 p-4 rounded-lg shadow max-w-full">
+          {/* Charts Section */}
+          <div className="flex flex-wrap gap-4">
+            {/* Top Row: Bar Chart and Line Chart */}
+            <div className="flex-1 basis-[45%] max-w-full bg-gray-800 p-4 shadow rounded-lg">
               <BarChart />
             </div>
-
-            <div className="bg-gray-800 p-4 rounded-lg shadow max-w-full">
-              <DrilldownChart timeFrame={timeFrame} />
+            <div className="flex-1 basis-[45%] max-w-full bg-gray-800 p-4 shadow rounded-lg">
+              <LineChart includeBMI={true} />
             </div>
           </div>
 
-          <div className="mt-6 max-w-full bg-gray-800 p-4 rounded-lg shadow">
-            <LineChart includeBMI={true} />
+          {/* Bottom Row: Centered Drilldown Chart */}
+          <div className="flex justify-center mt-6">
+            <div className="w-full max-w-[600px] bg-gray-800 p-4 shadow rounded-lg">
+              <DrilldownChart timeFrame={timeFrame} />
+            </div>
           </div>
         </main>
       </div>

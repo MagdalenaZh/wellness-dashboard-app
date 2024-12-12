@@ -23,7 +23,15 @@ ChartJS.register(
 
 const LineChart = ({ includeBMI = false }) => {
   const data = {
-    labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    labels: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
     datasets: [
       {
         label: "Calories Consumed",
