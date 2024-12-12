@@ -25,19 +25,19 @@ const BulletGraph = () => {
     datasets: [
       {
         label: "Consumed",
-        data: [1800], // Example data
+        data: [1800], // example data
         backgroundColor: "rgba(54, 162, 235, 0.5)",
       },
       {
         label: "Goal",
-        data: [2000], // Example goal
+        data: [2000], // example goal
         backgroundColor: "rgba(75, 192, 192, 0.5)",
       },
     ],
   };
 
   const options = {
-    indexAxis: "y", // This makes the bar chart horizontal
+    indexAxis: "y",
     plugins: {
       legend: { position: "right" },
       title: { display: true, text: "Calories Consumed vs. Goal" },

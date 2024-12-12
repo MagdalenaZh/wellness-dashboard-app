@@ -7,22 +7,22 @@ import LineChart from "../components/LineChart";
 import DrilldownChart from "../components/DrilldownChart";
 
 const Dashboard = () => {
-  // State to toggle sidebar visibility
+  //toggle sidebar visibility
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // State to track which charts are displayed
+  //track which charts are displayed
   const [selectedCharts, setSelectedCharts] = useState({
     barChart: true,
     lineChart: true,
     drilldownChart: true,
   });
 
-  // Function to toggle sidebar
+  //toggle sidebar
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  // Function to toggle chart visibility
+  //toggle chart visibility
   const handleChartToggle = (chart) => {
     setSelectedCharts((prevState) => ({
       ...prevState,
@@ -32,19 +32,14 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col min-h-screen w-full bg-gray-900 text-white">
-      {/* Header */}
       <Header toggleSidebar={toggleSidebar} />
-
       <div className="flex flex-1 w-full">
-        {/* Sidebar */}
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-
         {/* Main Content */}
         <main className="flex-1 p-6 overflow-y-auto">
           <h1 className="text-4xl font-bold mb-6 text-gray-200">
             User-Selectable Dashboard
           </h1>
-
           {/* Chart Selection */}
           <div className="mb-6">
             <h2 className="text-lg font-semibold mb-4">
@@ -90,7 +85,6 @@ const Dashboard = () => {
         </main>
       </div>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

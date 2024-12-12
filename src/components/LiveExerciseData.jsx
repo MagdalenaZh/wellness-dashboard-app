@@ -2,51 +2,87 @@ import React, { useState, useEffect } from "react";
 
 const LiveExerciseData = () => {
   const [data, setData] = useState({
-    bpm: 80, // Initial BPM
-    speed: 6.0, // Initial speed in km/h
-    calories: 0, // Initial calories burned
-    distance: 0, // Initial distance in km
+    steps: 1000, // Start at 1000 steps
+    bpm: 75, // Initial BPM
+    distance: (1000 / 1500).toFixed(2), // Initial distance in kilometers
+    calories: 25, // Starting calories burned (1000 steps = 25 calories)
   });
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    // Steps update every 15 seconds
+    const stepsInterval = setInterval(() => {
       setData((prevData) => ({
-        bpm: Math.floor(Math.random() * 40) + 80, // Random BPM: 80-120
-        speed: (Math.random() * 6 + 4).toFixed(1), // Random Speed: 4-10 km/h
-        calories: prevData.calories + Math.random() * 0.5, // Increment Calories
-        distance: prevData.distance + Math.random() * 0.05, // Increment Distance
+        ...prevData,
+        steps: prevData.steps + Math.floor(Math.random() * (23 - 15 + 1) + 15), // Increment steps by 15–23
       }));
-    }, 1000); // Update every second
+    }, 15000);
 
-    return () => clearInterval(interval);
+    // BPM update every 5 seconds
+    const bpmInterval = setInterval(() => {
+      setData((prevData) => ({
+        ...prevData,
+        bpm: Math.floor(Math.random() * (120 - 80 + 1) + 80), // Random BPM between 80–120
+      }));
+    }, 5000);
+
+    // Distance update every 10 seconds
+    const distanceInterval = setInterval(() => {
+      setData((prevData) => ({
+        ...prevData,
+        distance: (
+          parseFloat(prevData.distance) +
+          (Math.random() * (0.014 - 0.01) + 0.01)
+        ).toFixed(2), // Increment distance (10-14 meters per second in km)
+      }));
+    }, 10000);
+
+    // Calories burned updates every 40 steps
+    const caloriesInterval = setInterval(() => {
+      setData((prevData) => ({
+        ...prevData,
+        calories: prevData.calories + 1, // 1 calorie per 40 steps
+      }));
+    }, 15000);
+
+    // Cleanup intervals on component unmount
+    return () => {
+      clearInterval(stepsInterval);
+      clearInterval(bpmInterval);
+      clearInterval(distanceInterval);
+      clearInterval(caloriesInterval);
+    };
   }, []);
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-      <div className="bg-white p-4 shadow rounded-lg">
-        <h2 className="text-lg font-semibold text-gray-800">BPM</h2>
-        <p className="text-2xl font-bold text-red-500">{data.bpm}</p>
+    <div className="flex justify-between gap-4 w-full">
+      {/* Steps Taken */}
+      <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg text-center">
+        <h2 className="text-md font-semibold text-white">Steps Taken</h2>
+        <p className="text-lg font-bold text-blue-400 mt-2">{data.steps}</p>
       </div>
 
-      <div className="bg-white p-4 shadow rounded-lg">
-        <h2 className="text-lg font-semibold text-gray-800">Running Speed</h2>
-        <p className="text-2xl font-bold text-blue-500">{data.speed} km/h</p>
+      {/* BPM */}
+      <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg text-center">
+        <h2 className="text-md font-semibold text-white">Heart Rate (BPM)</h2>
+        <p className="text-lg font-bold text-red-400 mt-2">{data.bpm} BPM</p>
       </div>
 
-      <div className="bg-white p-4 shadow rounded-lg">
-        <h2 className="text-lg font-semibold text-gray-800">Calories Burned</h2>
-        <p className="text-2xl font-bold text-green-500">
-          {data.calories.toFixed(2)} kcal
+      {/* Distance Covered */}
+      <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg text-center">
+        <h2 className="text-md font-semibold text-white">Distance Covered</h2>
+        <p className="text-lg font-bold text-green-400 mt-2">
+          {data.distance} km
         </p>
       </div>
 
-      <div className="bg-white p-4 shadow rounded-lg">
-        <h2 className="text-lg font-semibold text-gray-800">Distance</h2>
-        <p className="text-2xl font-bold text-purple-500">
-          {data.distance.toFixed(2)} km
+      {/* Calories Burned */}
+      <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg text-center">
+        <h2 className="text-md font-semibold text-white">Calories Burned</h2>
+        <p className="text-lg font-bold text-yellow-400 mt-2">
+          {data.calories} kcal
         </p>
       </div>
-    </section>
+    </div>
   );
 };
 

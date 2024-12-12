@@ -33,7 +33,7 @@ const BarChart = () => {
     datasets: [
       {
         label: "Workout Hours",
-        data: [1, 1.5, 2, 1.8, 2.5, 3, 0], // Example data
+        data: [1, 1.5, 2, 1.8, 2.5, 3, 0], // example data
         backgroundColor: "rgba(75, 192, 192, 0.5)",
         borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
