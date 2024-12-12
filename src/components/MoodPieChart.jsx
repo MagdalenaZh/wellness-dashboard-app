@@ -10,7 +10,7 @@ const MoodPieChart = () => {
     datasets: [
       {
         label: "Mood Breakdown",
-        data: [10, 5, 8, 3], // Example data
+        data: [10, 5, 8, 3],
         backgroundColor: ["#4BC0C0", "#36A2EB", "#FFCE56", "#FF6384"],
         hoverOffset: 4,
       },
@@ -31,7 +31,10 @@ const MoodPieChart = () => {
   };
 
   return (
-    <div className="bg-white p-4 shadow rounded-lg">
+    <div
+      className="bg-gray-800 p-4 shadow rounded-lg"
+      style={{ maxWidth: "500px", margin: "0 auto" }}
+    >
       <Pie data={data} options={options} />
     </div>
   );
