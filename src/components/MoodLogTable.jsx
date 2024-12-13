@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const MoodLogTable = () => {
   const [selectedRow, setSelectedRow] = useState(null);

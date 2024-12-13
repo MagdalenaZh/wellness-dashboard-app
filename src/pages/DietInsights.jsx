@@ -8,14 +8,20 @@ import DietLineChart from "../components/DietLineChart";
 import DietTable from "../components/DietTable";
 
 const DietInsights = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="flex flex-col min-h-screen w-full bg-gray-900 text-white">
-      <Header />
+      <Header toggleSidebar={toggleSidebar} />
 
       <div className="flex flex-1 w-full">
-        <Sidebar />
+        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-6 overflow-x-auto">
           <h1 className="text-3xl font-bold mb-6 text-gray-200">
             Diet Insights
           </h1>
@@ -51,24 +57,24 @@ const DietInsights = () => {
           </div>
 
           {/* Charts Section */}
-          <div className="flex flex-wrap gap-4 mb-6">
-            <div className="flex-1 min-w-[300px] bg-gray-800 p-4 shadow rounded-lg">
+          <div className="flex flex-wrap justify-between mb-6">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full lg:w-[49.2%]">
               <DietBulletGraph />
             </div>
-            <div className="flex-1 min-w-[300px] bg-gray-800 p-4 shadow rounded-lg">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full lg:w-[49.2%]">
               <DietBarChart />
             </div>
           </div>
 
-          {/* Centered Line Chart Section */}
-          <div className="flex justify-center mt-6">
-            <div className="w-full max-w-[800px] bg-gray-800 p-4 shadow rounded-lg">
+          {/* Line Chart Section */}
+          <div className="flex justify-center mb-6">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full lg:w-[80%]">
               <DietLineChart />
             </div>
           </div>
 
           {/* Table Section */}
-          <div className="mt-6">
+          <div className="bg-gray-800 my-2 shadow rounded-lg w-full max-w-[1200px] mx-auto overflow-x-auto">
             <DietTable />
           </div>
         </main>

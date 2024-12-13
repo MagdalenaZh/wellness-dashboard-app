@@ -1,9 +1,9 @@
-import React from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+// eslint-disable-next-line react/prop-types
 const GymDrilldownChart = ({ timeFrame }) => {
   const data = {
     labels: ["Cardio", "Strength", "Yoga", "HIIT"],
@@ -35,7 +35,7 @@ const GymDrilldownChart = ({ timeFrame }) => {
 
   return (
     <div className="bg-gray-800 p-4 shadow rounded-lg">
-      <Pie data={data} options={options} />
+      <Pie data={data} options={options} className="max-h-[500px]" />
     </div>
   );
 };

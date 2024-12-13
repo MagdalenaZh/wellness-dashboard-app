@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const DietTable = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -56,9 +56,9 @@ const DietTable = () => {
   };
 
   return (
-    <div className="bg-gray-800 p-4 shadow rounded-lg">
+    <div className="bg-gray-800 p-4 shadow rounded-lg overflow-x-auto">
       <h2 className="text-lg font-semibold text-white mb-4">Meal Log</h2>
-      <table className="table-auto w-full border-collapse border border-gray-700">
+      <table className="table-auto w-full border-collapse border border-gray-700 overflow-x-auto">
         <thead>
           <tr className="bg-gray-700">
             <th className="border border-gray-600 px-4 py-2 text-white">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
@@ -87,19 +87,19 @@ const GymProgress = () => {
           </div>
 
           {/* Charts Section */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap  justify-between">
             {/* Top Row: Bar Chart and Line Chart */}
-            <div className="flex-1 basis-[45%] max-w-full bg-gray-800 p-4 shadow rounded-lg">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full 2xl:w-[49.2%]">
               <GymBarChart />
             </div>
-            <div className="flex-1 basis-[45%] max-w-full bg-gray-800 p-4 shadow rounded-lg">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full 2xl:w-[49.2%]">
               <DietLineChart />
             </div>
           </div>
 
           {/* Bottom Row: Centered Drilldown Chart */}
-          <div className="flex justify-center mt-6">
-            <div className="w-full max-w-[600px] bg-gray-800 p-4 shadow rounded-lg">
+          <div className="flex flex-wrap  justify-between">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full">
               <GymDrilldownChart timeFrame={timeFrame} />
             </div>
           </div>

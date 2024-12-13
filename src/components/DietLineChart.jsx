@@ -1,4 +1,3 @@
-import React from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -21,7 +20,7 @@ ChartJS.register(
   Legend
 );
 
-const DietLineChart = ({ includeBMI = false }) => {
+const DietLineChart = () => {
   const data = {
     labels: ["", "Breakfast", "Snack", "Lunch", "Snack", "Dinner"],
     datasets: [
@@ -68,7 +67,7 @@ const DietLineChart = ({ includeBMI = false }) => {
   };
 
   return (
-    <div className="bg-gray-800 p-4 shadow rounded-lg">
+    <div className="bg-gray-800 p-4 shadow rounded-lg  flex max-h-[400px] w-full justify-center ">
       <Line data={data} options={options} />
     </div>
   );

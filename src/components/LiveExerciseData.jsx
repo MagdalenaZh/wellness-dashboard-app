@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const LiveExerciseData = () => {
   const [data, setData] = useState({
@@ -54,7 +54,7 @@ const LiveExerciseData = () => {
   }, []);
 
   return (
-    <div className="flex justify-between gap-4 w-full">
+    <div className="flex justify-between gap-4 w-full flex-wrap">
       {/* Steps Taken */}
       <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg text-center">
         <h2 className="text-md font-semibold text-white">Steps Taken</h2>

@@ -1,4 +1,3 @@
-import React from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -87,7 +86,7 @@ const MoodLineChart = () => {
   };
 
   return (
-    <div className="bg-gray-800 p-4 shadow rounded-lg">
+    <div className="bg-gray-800 p-4 shadow rounded-lg max-h-[400px] flex justify-center">
       <Line data={data} options={options} />
     </div>
   );

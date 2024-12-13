@@ -9,27 +9,20 @@ import SleepAreaChart from "../components/SleepAreaChart";
 import MoodLogTable from "../components/MoodLogTable";
 
 const MoodTrends = () => {
-  const [selectedRow, setSelectedRow] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const moodLogs = [
-    {
-      date: "2023-12-01",
-      moodScore: 8,
-      comment: "Feeling great after workout",
-    },
-    { date: "2023-12-02", moodScore: 6, comment: "A bit stressed due to work" },
-    { date: "2023-12-03", moodScore: 7, comment: "Relaxed, did some yoga" },
-    { date: "2023-12-04", moodScore: 5, comment: "Tired, lack of sleep" },
-  ];
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <div className="flex flex-col min-h-screen w-full bg-gray-900 text-white">
-      <Header />
+      <Header toggleSidebar={toggleSidebar} />
 
       <div className="flex flex-1 w-full">
-        <Sidebar />
+        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-6 overflow-x-auto">
           <h1 className="text-3xl font-bold mb-6 text-gray-200">Mood Trends</h1>
 
           {/* Key Metrics Section */}
@@ -55,28 +48,28 @@ const MoodTrends = () => {
           </div>
 
           {/* Area Chart and Sparklines */}
-          <div className="flex flex-wrap gap-4 mb-6">
-            <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg">
+          <div className="flex flex-wrap justify-between mb-6">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full lg:w-[49.2%]">
               <SleepAreaChart />
             </div>
-            <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full lg:w-[49.2%]">
               <Sparklines />
             </div>
           </div>
 
           {/* Pie Chart and Mood Log */}
-          <div className="flex flex-wrap gap-4 mb-6">
-            <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg">
+          <div className="flex flex-wrap justify-between mb-6">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full lg:w-[49.2%]">
               <MoodPieChart />
             </div>
-            <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full lg:w-[49.2%]">
               <MoodLogTable />
             </div>
           </div>
 
           {/* Mood Trends Over Time */}
-          <div className="flex justify-center mt-6">
-            <div className="w-full max-w-[800px] bg-gray-800 p-4 shadow rounded-lg">
+          <div className="flex justify-center">
+            <div className="bg-gray-800 my-2 shadow rounded-lg w-full lg:w-[80%]">
               <MoodLineChart />
             </div>
           </div>

@@ -1,8 +1,26 @@
-import React from "react";
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from "chart.js";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from "chart.js";
 import { Line } from "react-chartjs-2";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
 const SleepAreaChart = () => {
   const data = {
@@ -72,7 +90,7 @@ const SleepAreaChart = () => {
   };
 
   return (
-    <div className="bg-gray-800 p-4 shadow rounded-lg">
+    <div className="bg-gray-800 p-4 shadow rounded-lg w-full">
       <Line data={data} options={options} />
     </div>
   );

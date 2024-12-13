@@ -1,4 +1,3 @@
-import React from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
@@ -31,10 +30,7 @@ const MoodPieChart = () => {
   };
 
   return (
-    <div
-      className="bg-gray-800 p-4 shadow rounded-lg"
-      style={{ maxWidth: "500px", margin: "0 auto" }}
-    >
+    <div className="bg-gray-800 p-4 shadow rounded-lg max-h-[600px] 2xl:h-[600px] flex justify-center items-center">
       <Pie data={data} options={options} />
     </div>
   );
