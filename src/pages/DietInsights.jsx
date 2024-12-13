@@ -46,7 +46,7 @@ const DietInsights = () => {
             </div>
             <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg text-center">
               <h2 className="text-lg font-semibold text-white">Fats Intake</h2>
-              <p className="text-2xl font-bold text-yellow-400">120g</p>
+              <p className="text-2xl font-bold text-yellow-400">50g</p>
             </div>
             <div className="flex-1 bg-gray-800 p-4 shadow rounded-lg text-center">
               <h2 className="text-lg font-semibold text-white">

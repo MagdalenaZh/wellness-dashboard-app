@@ -16,7 +16,6 @@ const FrontPage = () => {
       <div className="flex flex-1">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <main className="flex-1 p-6">
-          {/* Hero Section */}
           <div className="flex flex-col items-center justify-center bg-gray-800 p-20 rounded-lg shadow mb-12 animate-fade-in">
             <div className="text-center">
               <h1 className="text-5xl font-bold mb-8 text-blue-400 animate-slide-down">
@@ -33,13 +32,11 @@ const FrontPage = () => {
             </div>
           </div>
 
-          {/* Features Section */}
           <div className="mb-12">
             <h2 className="text-4xl font-bold mb-8 text-center text-gray-200">
               What You Can Do
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Feature 1 */}
               <div className="bg-gray-800 p-8 rounded-lg shadow text-center transform hover:scale-105 transition">
                 <div className="bg-blue-500 w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6">
                   <i className="fas fa-dumbbell text-white text-2xl"></i>
@@ -53,7 +50,6 @@ const FrontPage = () => {
                 </p>
               </div>
 
-              {/* Feature 2 */}
               <div className="bg-gray-800 p-8 rounded-lg shadow text-center transform hover:scale-105 transition">
                 <div className="bg-green-500 w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6">
                   <i className="fas fa-utensils text-white text-2xl"></i>
@@ -64,7 +60,6 @@ const FrontPage = () => {
                 </p>
               </div>
 
-              {/* Feature 3 */}
               <div className="bg-gray-800 p-8 rounded-lg shadow text-center transform hover:scale-105 transition">
                 <div className="bg-purple-500 w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6">
                   <i className="fas fa-smile text-white text-2xl"></i>
@@ -79,7 +74,6 @@ const FrontPage = () => {
             </div>
           </div>
 
-          {/* Call to Action Section */}
           <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-12 rounded-lg shadow text-center">
             <h2 className="text-4xl font-bold text-white mb-6">
               Ready to Take Control of Your Journey?
